@@ -30,7 +30,7 @@ steps:
 
 # Specifying the image that we will be saving to the Container Registry
 images:
-  - us-east4-docker.pkg.dev/$PROJECT_ID/techgig-cicd/$_IMAGE:$SHORT_SHA
+  - $_REGION.pkg.dev/$PROJECT_ID/techgig-cicd/$_IMAGE:$SHORT_SHA
 
 # Giving the timeout period for this entire file
 timeout: '2000s'
