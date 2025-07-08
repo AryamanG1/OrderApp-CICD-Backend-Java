@@ -5,7 +5,7 @@ steps:
     args:
       - build
       - -t
-      - us-east4-docker.pkg.dev/$PROJECT_ID/techgig-cicd/$_IMAGE:$SHORT_SHA
+      - $_REGION.pkg.dev/$PROJECT_ID/techgig-cicd/$_IMAGE:$SHORT_SHA
       - .
 
   # Step 2: Push the Docker image to Artifact Registry
@@ -13,7 +13,7 @@ steps:
     id: Push
     args:
       - push
-      - us-east4-docker.pkg.dev/$PROJECT_ID/techgig-cicd/$_IMAGE:$SHORT_SHA
+      - $_REGION.pkg.dev/$PROJECT_ID/techgig-cicd/$_IMAGE:$SHORT_SHA
 
   # Step 3: Deploy image to Cloud Run
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
